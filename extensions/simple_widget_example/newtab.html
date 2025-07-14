@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <title>New Tab Example</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            font-family: monospace;
+            background: #000;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 2rem;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 1.4rem;
+            background: #111;
+            padding: 0.5rem 1rem;
+        }
+
+        .intro {
+            font-size: 1rem;
+            background: #111;
+            padding: 1rem;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+
+        .intro-2 {
+            font-size: .8rem;
+            background: #111;
+            width: 40%;
+            height: fit-content;
+            padding: 1rem;
+            border: 1px solid #333;
+            border-radius: 10px;
+        }
+
+        .description-heading {
+    display: flex;
+    font-size: 1.5em;
+    margin-bottom: .5em;
+    width: 100%;
+        }
+
+        .main-area {
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+        }
+
+        .tile-column {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            min-width: 250px;
+        }
+
+        .body-wrapper {
+            flex: 3;
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            box-sizing: border-box;
+        }
+
+        .uml-wrapper {
+            display: flex;
+            flex-direction: row;
+            gap: 1em;
+        }
+
+        .tile {
+            background: #f4f4f4;
+            color: #000;
+            border: 1px solid #999;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tile-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #222;
+            color: #fff;
+            padding: 0.5em;
+            font-weight: bold;
+        }
+
+        .tile-body {
+            padding: 1em;
+            font-size: 0.9em;
+            color: #111;
+            flex-grow: 1;
+        }
+
+        .tile-button {
+            background: #444;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 0.8em;
+            padding: 0.3em 0.7em;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .tile-button:hover {
+            opacity: 0.85;
+        }
+
+        .button-row,
+        .button-titles {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .button-text {
+            margin-left: .5em;
+            width: 33%;
+            font-size: 0.8em;
+            color: #555;
+            flex-grow: 1;
+        }
+
+        .wide-button {
+            flex: 1;
+            padding: 0.4em .5em;
+            font-size: .8em;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .wide-button:hover {
+            background: #555;
+        }
+
+        #test-button {
+            color: #333;
+            background: #fff;
+        }
+
+        #test-button:hover {
+            color: #333;
+            background: #ababab;
+        }
+
+        .body-wrapper img {
+            max-width: 100%;
+            max-height: 50vh;
+            width: 100%;
+            padding: 1em 2em;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid #333;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Hide tiles and specific text blocks on mobile */
+        @media (max-width: 768px) {
+            .hide-on-mobile {
+                display: none !important;
+            }
+
+            .intro-2 {
+                width: fit-content;
+                font-size: 0.85rem;
+                padding: 1.5rem;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .main-area {
+                flex-direction: column;
+            }
+
+            .tile-column {
+                display: none;
+                /* alternative safeguard */
+            }
+
+            .body-wrapper {
+                width: 100%;
+            }
+
+            .uml-wrapper {
+                flex-direction: column;
+            }
+
+            .button-row,
+            .button-titles {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .button-text {
+                width: 100%;
+                font-size: 0.85rem;
+            }
+
+            .wide-button {
+                width: 100%;
+            }
+
+            .body-wrapper img {
+                padding: 1em 0;
+            }
+
+            h1 {
+                font-size: 1.2rem;
+                padding: 0.75rem 1rem;
+            }
+
+            .tile-button {
+                font-size: 0.75em;
+                padding: 0.3em 0.6em;
+            }
+
+            .tile-body {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🧩 Custom Start Page: Create your own HTML</h1>
+
+        <div class="intro">
+            Webfuse extensions allow you to improve the UX of your Space, augment web content and perform a range of
+            tasks.
+            <br><br>
+            You are looking at <strong>newtab.html</strong><br><br>
+            This HTML file will open whenever a new tab is created. The Tab Owner will be the user that triggers it.
+        </div>
+
+        <div class="main-area">
+            <div class="tile-column hide-on-mobile">
+
+                <div class="tile">
+                    <div class="tile-header">
+                        <span>manifest.json</span>
+                        <button class="tile-button"
+                            onclick="window.open('https://dev.webfuse.com/reference/extension-api/#manifestjson')">Go to
+                            docs</button>
+                    </div>
+                    <div class="tile-body">
+                        Entry point for the extension. Declares components and configures variables.
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="tile-header">
+                        <span>newtab.html</span>
+                        <button class="tile-button"
+                            onclick="window.open('https://dev.webfuse.com/reference/extension-api/#new-tab-page')">Go to
+                            docs</button>
+                    </div>
+                    <div class="tile-body">
+                        Defines the page loaded when a user opens a new tab.
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="tile-header">
+                        <span>content.js</span>
+                        <button class="tile-button"
+                            onclick="window.open('https://dev.webfuse.com/reference/extension-api/#content-script')">Go
+                            to docs</button>
+                    </div>
+                    <div class="tile-body">
+                        Injects functionality into pages/apps visited.
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="tile-header">
+                        <span>popup.html</span>
+                        <button class="tile-button"
+                            onclick="window.open('https://dev.webfuse.com/reference/extension-api/#popup-page')">Go to
+                            docs</button>
+                    </div>
+                    <div class="tile-body">
+                        Additional HTML frame to contain supporting functionality.
+                    </div>
+                </div>
+
+                <div class="tile">
+                    <div class="tile-header">
+                        <span>background.js</span>
+                        <button class="tile-button"
+                            onclick="window.open('https://dev.webfuse.com/reference/extension-api/#service-worker')">Go
+                            to docs</button>
+                    </div>
+                    <div class="tile-body">
+                        Service worker to perform background tasks and maintain state across components.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="body-wrapper">
+                <div class="button-titles hide-on-mobile">
+                    <div class="button-text">
+                        Example: <a href="https://dev.webfuse.com/reference/session-api/" target="_blank"
+                            style="color: inherit; text-decoration: underline;">Session API</a> Method:
+                    </div>
+                    <div class="button-text">Example: <a href="https://dev.webfuse.com/reference/session-api/"
+                            target="_blank" style="color: inherit; text-decoration: underline;">Session API</a> Command:
+                    </div>
+                    <div class="button-text">Test the extension flow:</div>
+                </div>
+                <div class="button-row">
+                    <button class="wide-button hide-on-mobile" id="startScreensharing">Share Screen</button>
+                    <button class="wide-button" id="shareFile">Upload a File</button>
+                    <button class="wide-button" id="test-button"><b>Test the Widget</b></button>
+                </div>
+                <div class="uml-wrapper">
+                    <img src="https://demo.surfly.com/resources-common/images/template_uml.png"
+                        alt="Widget State Initialization Diagram" />
+                    <div class="intro-2">
+                        <span class="description-heading">About this Extension</span>
+                        This extension is a simple example of communicating between components in a
+                        Webfuse extension.<br><br>
+                        It augments each page visited with a custom widget. The widget enables the user to toggle the
+                        page colours with a click.<br><br>
+                        The left/right position and the border color of the widget are variable.<br><br>
+                        Inital values for these variables are declared in manifest.json.<br><br>
+                        Adjustments can be made through the popup.<br><br>
+                        The background script stores the most recent state of these selections.<br><br>
+                        The content script injects the widget with the most recent settings onto each page.<br><br>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Screenshare button
+            document.getElementById("startScreensharing")
+                .addEventListener("click", () => browser.webfuseSession.startScreensharing());
+
+            // Fileshare button
+            document.getElementById("shareFile")
+                .addEventListener("click", () => {
+                    const input = document.createElement("input");
+                    input.type = "file";
+                    input.accept = "*/*";
+                    input.onchange = e => browser.webfuseSession.apiRequest({
+                        cmd: "upload_file",
+                        file: e.target.files[0]
+                    });
+                    input.click();
+                });
+
+            document.getElementById("test-button").addEventListener("click", () => {
+                window.location.href = "https://www.webfuse.com/";
+            });
+        });
+    </script>
+</body>
+
+</html>

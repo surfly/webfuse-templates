@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Adjust Widget</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      font-family: monospace;
+      background: #000;
+      color: #fff;
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
+      padding: 4vh 5vw;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    h1 {
+      font-size: 1.2em;
+      margin: 0;
+      background: #111;
+      padding: 1vh 1vw;
+    }
+
+    .form-section {
+      background: #111;
+      border: 1px solid #333;
+      padding: 2vh 2vw;
+      display: flex;
+      flex-direction: column;
+      gap: 2vh;
+    }
+
+    .row {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 2vw;
+      flex-wrap: wrap;
+    }
+
+    label {
+      font-size: 1rem;
+      width: 160px;
+    }
+
+    select {
+      font-size: 1rem;
+      padding: 0.4rem;
+      background: #fff;
+      color: #000;
+      border: 1px solid #333;
+      border-radius: 4px;
+      width: 200px;
+      appearance: none;
+      outline: none;
+    }
+
+    select:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Adjust Widget</h1>
+
+    <div class="form-section">
+      <div class="row">
+        <label for="border-color">Select border color:</label>
+        <select id="border-color">
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+        </select>
+      </div>
+
+      <div class="row">
+        <label for="position">Select position:</label>
+        <select id="position">
+          <option value="left">Left</option>
+          <option value="right">Right</option>
+        </select>
+      </div>
+    </div>
+  </div>
+</body>
+<script>
+  // Log that popup is starting
+  console.log("popup load event triggered");
+
+  // Ask background for current widget state
+  browser.runtime.sendMessage({
+    target: "background",
+    action: "get_widet_state",
+    from: "popup"
+  });
+
+  console.log("popup get state sent");
+
+  // Listen for the widget state sent back from background
+  browser.runtime.onMessage.addListener(message => {
+    if (message.target === "popup" && message.action === "set_widget_state") {
+      console.log("Widget state received in popup: ", message);
+
+      const color = message.color || message.message?.color;
+      const position = message.position || message.message?.position;
+
+      const borderSelect = document.getElementById("border-color");
+      const positionSelect = document.getElementById("position");
+
+      if (color && borderSelect) {
+        borderSelect.value = color;
+      }
+      if (position && positionSelect) {
+        positionSelect.value = position;
+      }
+    }
+  });
+
+  // Handle user updates to dropdowns
+  const borderSelect = document.getElementById("border-color");
+  const positionSelect = document.getElementById("position");
+
+  function sendUpdate() {
+    browser.runtime.sendMessage({
+      target: "background",
+      action: "update_widget_state",
+      from: "popup",
+      color: borderSelect.value,
+      position: positionSelect.value
+    });
+  }
+
+  borderSelect.addEventListener("change", sendUpdate);
+  positionSelect.addEventListener("change", sendUpdate);
+
+  // Optional: unified message logger for debugging
+  browser.runtime.onMessage.addListener(message => {
+    console.log("General message received in popup script: ", message);
+  });
+</script>
+
+</html>
