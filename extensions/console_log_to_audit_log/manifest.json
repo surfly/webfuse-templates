@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Console Log to Audit Log",
+  "version": "1.0",
+  "content_scripts": [
+    {
+      "js": [
+        "console_log_logger.js"
+      ]
+    }
+  ],
+  "env": [
+    {
+      "key": "log_type",
+      "value": "log,warn,error,info,debug",
+      "description": "Select the type of console log messages you want to appear in the Audit Log. Use no spaces and separate with ,"
+    }
+  ]
+}
