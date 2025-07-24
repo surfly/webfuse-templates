@@ -1,6 +1,6 @@
 {
   "space_data": {
-    "name": "Meeting Room - John Spooner",
+    "name": "Sales Team Demo Space",
     "type": "meeting",
     "visibility": "company",
     "identification": "name_only",
@@ -152,12 +152,12 @@
           }
         },
         "ref": "main",
-        "repo_url": "https://github.com/JSPOON3R/WE-SALESDEMO"
+        "repo_url": "https://github.com/JSPOON3R/WE-SALESDEMO.git"
       }
     ],
     "custom_landing_page": {
       "ref": "main",
-      "repo_url": ""
+      "repo_url": "https://github.com/JSPOON3R/WL-SALESDEMO.git"
     }
   },
   "overrides": {}
