@@ -1,4 +1,4 @@
-# Webfuse Space Repo
-A place to store and share Webfuse space templates 
+# Webfuse Marketplace Space Repo
+A place to store and share Webfuse space templates with instructions and metadata for use on the online marketplace.
 
-Space exports are stored in JSON format and can be imported into your Webfuse environment
+See the TEMPLATE directory to understand how to add a new space.
