@@ -1,7 +1,9 @@
 ## Required Files in Directory
 
 # template.json
-  This is your space template export json from the studio. It must be renamed to template.json and added to the directory
+  This is your space template export json from the studio. It must be renamed to template.json and added to the directory.
+
+  The space name (as it will show on the marketplace) and the apps needed will be pulled this file here.
 
 # marketplace.json
   This contains metadata for the marketplace page. Make sure you populate the following:
