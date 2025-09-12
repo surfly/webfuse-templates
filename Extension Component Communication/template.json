@@ -1,0 +1,91 @@
+{
+  "name": "Extension Component Communication",
+  "type": "solo",
+  "visibility": "company",
+  "identification": "anonymous",
+  "access_control": "public",
+  "host_rights": "everyone",
+  "settings": {
+    "anyone_can_deactivate_space": false,
+    "host_switching_allowed": true,
+    "non_hosts_can_open_tabs": true,
+    "participants_can_request_to_interact": true,
+    "new_urls_allowed": true,
+    "follower_drawing_selector": "",
+    "download_trigger_enabled": true,
+    "invitations_allowed": true,
+    "pause_enabled": false,
+    "sounds_enabled": true,
+    "notifications_enabled": true,
+    "hide_cursors": false,
+    "start_with_invite_modal": false,
+    "end_of_session_popup_url": "",
+    "start_with_loading_screen": true,
+    "start_with_chat_open": false,
+    "hide_session_ui": false,
+    "url_mangling": false,
+    "verbose_console": false,
+    "native_selects": true,
+    "native_dialogs_enabled": false,
+    "csp_report_uri": "",
+    "startup_page_action": "new_tab_page",
+    "startup_page_list": [],
+    "admission_enabled": false,
+    "allow_opening_urls_from_query_parameter": false
+  },
+  "apps": [
+    {
+      "type": "screensharing",
+      "config": {
+        "screensharing_enabled": true
+      }
+    }
+  ],
+  "extensions": [
+    {
+      "manifest": {
+        "env": [
+          {
+            "key": "contentPopupColor",
+            "value": "blue",
+            "description": "Type 'blue' or 'green'"
+          },
+          {
+            "key": "contentPopupPosition",
+            "value": "right",
+            "description": "Type 'left' or 'right'"
+          }
+        ],
+        "name": "Simple Widget Example",
+        "action": {
+          "default_popup": "popup.html"
+        },
+        "version": "3.0",
+        "background": {
+          "service_worker": "background.js"
+        },
+        "permissions": [
+          "clipboardWrite"
+        ],
+        "content_scripts": [
+          {
+            "js": [
+              "content.js"
+            ],
+            "run_at": "document_idle",
+            "matches": [
+              "<all_urls>"
+            ]
+          }
+        ],
+        "manifest_version": 3,
+        "chrome_url_overrides": {
+          "newtab": "newtab.html"
+        }
+      },
+      "ref": "main",
+      "repo_url": "https://github.com/WE-EXTENSION-COMPONENT-COMMUNICATION"
+    }
+  ],
+  "custom_landing_page": null
+}
