@@ -1,0 +1,130 @@
+{
+  "space_data": {
+    "name": "Universal Accessibility Widget",
+    "type": "assisted",
+    "visibility": "company",
+    "identification": "anonymous",
+    "access_control": "public",
+    "host_rights": "everyone",
+    "settings": {
+      "anyone_can_deactivate_space": false,
+      "host_switching_allowed": true,
+      "non_hosts_can_open_tabs": true,
+      "participants_can_request_to_interact": true,
+      "new_urls_allowed": true,
+      "follower_drawing_selector": "",
+      "download_trigger_enabled": true,
+      "invitations_allowed": true,
+      "pause_enabled": false,
+      "sounds_enabled": true,
+      "notifications_enabled": true,
+      "hide_cursors": false,
+      "start_with_invite_modal": false,
+      "end_of_session_popup_url": "",
+      "start_with_loading_screen": true,
+      "start_with_chat_open": false,
+      "hide_session_ui": false,
+      "url_mangling": false,
+      "verbose_console": false,
+      "native_selects": true,
+      "native_dialogs_enabled": false,
+      "csp_report_uri": "",
+      "startup_page_action": "new_tab_page",
+      "startup_page_list": [],
+      "admission_enabled": false,
+      "allow_opening_urls_from_query_parameter": false
+    },
+    "apps": [],
+    "extensions": [
+      {
+        "manifest": {
+          "env": [
+            {
+              "key": "widgetColor1",
+              "value": "black",
+              "description": "Enter a CSS color for the widget background."
+            },
+            {
+              "key": "widgetColor2",
+              "value": "white",
+              "description": "Enter a CSS color for the widget icon."
+            },
+            {
+              "key": "invertColors",
+              "value": "false",
+              "description": "Invert all page colors. Options: 'true' or 'false'."
+            },
+            {
+              "key": "grayscale",
+              "value": "false",
+              "description": "Apply grayscale filter to the page. Options: 'true' or 'false'."
+            },
+            {
+              "key": "saturation",
+              "value": "none",
+              "description": "Color saturation adjustment. Options: 'none', 'low', or 'high'."
+            },
+            {
+              "key": "underlineStyle",
+              "value": "none",
+              "description": "Link highlight style. Options: 'none', 'style0', 'style1', 'style2'."
+            },
+            {
+              "key": "fontSize",
+              "value": "default",
+              "description": "Base font size for text. Options: '' (default), '1.3rem', '1.5rem', '1.8rem'."
+            },
+            {
+              "key": "contrast",
+              "value": "none",
+              "description": "Contrast adjustment level. Options: 'none', 'low', 'medium', or 'high'."
+            },
+            {
+              "key": "hideImages",
+              "value": "false",
+              "description": "Hide all images on the page. Options: 'true' or 'false'."
+            },
+            {
+              "key": "hideVideo",
+              "value": "false",
+              "description": "Hide all video elements on the page. Options: 'true' or 'false'."
+            },
+            {
+              "key": "cursorMode",
+              "value": "none",
+              "description": "Custom cursor mode. Options: 'none', 'cursor0', 'cursor1', 'cursor2'."
+            },
+            {
+              "key": "position",
+              "value": "right",
+              "description": "Position of the accessibility widget. Options: 'left', 'top', 'bottom', or 'right'."
+            }
+          ],
+          "name": "Accessibility Widget Extension",
+          "version": "1.0",
+          "background": {
+            "service_worker": "background.js"
+          },
+          "content_scripts": [
+            {
+              "js": [
+                "content.js"
+              ],
+              "matches": [
+                "<all_urls>"
+              ]
+            }
+          ],
+          "manifest_version": 3,
+          "chrome_url_overrides": {
+            "newtab": "newtab.html"
+          }
+        },
+        "ref": "main",
+        "repo_url": "https://github.com/JSPOON3R/WE-ACCESSIBILITY-WIDGET"
+      }
+    ],
+    "landing_page": null
+  },
+  "overrides": {}
+}
