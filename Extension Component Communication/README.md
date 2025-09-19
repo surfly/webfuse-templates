@@ -4,7 +4,7 @@ This Space contains an extension that will add a widget to every page visisted. 
 ## How to Use
 Start a session on this space. The start page included in the extension contains more information about how this extension works and how to use it.
 
-If you want to modify the extension or use it as a template, copy the files from https://github.com/JSPOON3R/WE-EXTENSION-COMPONENT-COMMUNICATION and edit them to your needs. 
+If you want to modify the extension or use it as a template, copy the files from and edit them to your needs (link below). 
 
 ## Video
 none
@@ -13,7 +13,7 @@ none
 
 Your start page will load with instructions and a diagram. Open a new tab and change the url to any page to test. You can also click "Test the Widget"
 
-<img width="1502" height="781" alt="Screenshot 2025-09-12 at 15 46 43" src="https://github.com/user-attachments/assets/6fe94249-7592-4a30-a1a0-e8e317a2dc7c" />
+<img width="1919" height="934" alt="Screenshot 2025-09-19 at 15 04 21" src="https://github.com/user-attachments/assets/c57dd77a-d7c5-4685-bd7c-f94980e2f695" />
 
 
 The widget will appear initially in the bottom right with a blue border. Clicking it will run JS in the conent script to remove color from the page.
@@ -36,4 +36,8 @@ Modify the starting values directly in the extension variables (initially set in
 [Understanding Webfuse extensions](https://dev.webfuse.com/guides/virtual-web-extensions/)
 
 [Add your own extension variables](https://dev.webfuse.com/reference/extension-api/#manifestjson)
+
+[Download the extension](https://github.com/JSPOON3R/WE-EXTENSION-COMPONENT-COMMUNICATION)
+
+
 
