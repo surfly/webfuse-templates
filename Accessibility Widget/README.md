@@ -1,5 +1,5 @@
 ## Description
-This space contains an extension that takes an existing [accessibility widget](https://github.com/PrabothCharith/accessibility-plugin) from a public github repository. 
+This space contains an extension that takes an existing Accessibility Widget (https://github.com/PrabothCharith/accessibility-plugin) from a public github repository. 
 The extension adds additional logic to use the widget within Webfuse. This includes maintaining state between tabs & pre-defining the widget settings with extension variables.
 
 ## How to Use
