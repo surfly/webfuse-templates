@@ -13,6 +13,10 @@ none
 
 ## Screenshots
 
+Start Page with instructions and additional information:
+<img width="1912" height="940" alt="Screenshot 2025-09-19 at 15 23 20" src="https://github.com/user-attachments/assets/163011bf-3414-4dd6-af31-7473f1354a1d" />
+
+
 The widget includes a range of accessibility options:
 
 ![ezgif-56fa30ff53344e](https://github.com/user-attachments/assets/d6ebedb2-6dc8-4456-8bc4-37e135da554d)
