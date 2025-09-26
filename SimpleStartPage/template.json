@@ -1,85 +1,146 @@
 {
-  "name": "Simple Start Page",
-  "type": "assisted",
-  "visibility": "members-only",
-  "identification": "anonymous",
-  "access_control": "public",
-  "host_rights": "everyone",
-  "settings": {
-    "anyone_can_deactivate_space": false,
-    "host_switching_allowed": true,
-    "non_hosts_can_open_tabs": true,
-    "participants_can_request_to_interact": true,
-    "new_urls_allowed": true,
-    "follower_drawing_selector": "",
-    "download_trigger_enabled": true,
-    "invitations_allowed": true,
-    "pause_enabled": false,
-    "sounds_enabled": false,
-    "notifications_enabled": true,
-    "hide_cursors": false,
-    "start_with_invite_modal": false,
-    "end_of_session_popup_url": "",
-    "start_with_loading_screen": true,
-    "start_with_chat_open": false,
-    "hide_session_ui": false,
-    "url_mangling": false,
-    "verbose_console": false,
-    "native_selects": true,
-    "native_dialogs_enabled": false,
-    "csp_report_uri": "",
-    "startup_page_action": "new_tab_page",
-    "startup_page_list": [],
-    "admission_enabled": false,
-    "allow_opening_urls_from_query_parameter": false
-  },
-  "apps": [
-    {
-      "type": "screensharing",
-      "config": {
-        "screensharing_enabled": true
-      }
+  "space_data": {
+    "name": "Simple Start Page",
+    "type": "assisted",
+    "visibility": "members-only",
+    "identification": "anonymous",
+    "access_control": "public",
+    "host_rights": "everyone",
+    "settings": {
+      "anyone_can_deactivate_space": false,
+      "host_switching_allowed": true,
+      "non_hosts_can_open_tabs": true,
+      "participants_can_request_to_interact": true,
+      "new_urls_allowed": true,
+      "follower_drawing_selector": "",
+      "download_trigger_enabled": true,
+      "invitations_allowed": true,
+      "pause_enabled": false,
+      "sounds_enabled": false,
+      "notifications_enabled": true,
+      "hide_cursors": false,
+      "start_with_invite_modal": false,
+      "end_of_session_popup_url": "",
+      "start_with_loading_screen": true,
+      "start_with_chat_open": false,
+      "hide_session_ui": false,
+      "url_mangling": false,
+      "verbose_console": false,
+      "native_selects": true,
+      "native_dialogs_enabled": false,
+      "csp_report_uri": "",
+      "startup_page_action": "new_tab_page",
+      "startup_page_list": [],
+      "admission_enabled": false,
+      "allow_opening_urls_from_query_parameter": false
     },
-    {
-      "type": "filesharing",
-      "config": {
-        "document_viewer": "multi-format",
-        "filesharing_enabled": true,
-        "document_editor_enabled": true,
-        "original_file_download_allowed": true
-      }
-    }
-  ],
-  "extensions": [
-    {
-      "manifest": {
-        "env": [
-          {
-            "key": "primaryColor",
-            "value": "#007AA3",
-            "description": "Enter a color by name (e.g. red, blue, green) or a hex code (e.g. #007AA3)"
-          },
-          {
-            "key": "secondaryColor",
-            "value": "#00BCEB",
-            "description": "Enter a color by name (e.g. red, blue, green) or a hex code (e.g. #00BCEB)"
-          },
-          {
-            "key": "CompanyLogoURL",
-            "value": "https://dev.webfuse.com/_astro/webfuse-black.BHtSVUJl.svg",
-            "description": "Enter a URL that points to your company logo"
-          }
-        ],
-        "name": "Simple Start Page Extension",
-        "version": "3.0",
-        "manifest_version": 3,
-        "chrome_url_overrides": {
-          "newtab": "newtab.html"
+    "apps": [
+      {
+        "type": "connectivity",
+        "config": {
+          "regions": [
+            "eu-uk"
+          ]
         }
       },
-      "ref": "main",
-      "repo_url": "https://github.com/JSPOON3R/WE-SIMPLE-START-PAGE"
-    }
-  ],
-  "custom_landing_page": null
+      {
+        "type": "screensharing",
+        "config": {
+          "screensharing_enabled": true
+        }
+      },
+      {
+        "type": "filesharing",
+        "config": {
+          "document_viewer": "multi-format",
+          "filesharing_enabled": true,
+          "document_editor_enabled": true,
+          "original_file_download_allowed": true
+        }
+      }
+    ],
+    "extensions": [
+      {
+        "manifest": {
+          "env": [
+            {
+              "key": "BackgroundImgURL",
+              "value": "default",
+              "description": "Enter a URL for the background image or use default"
+            },
+            {
+              "key": "CompanyLogoURL",
+              "value": "default",
+              "description": "Enter a URL that points to your company logo"
+            },
+            {
+              "key": "SubjectLine",
+              "value": "Meeting Room ",
+              "description": "Enter a phrase or leave empty"
+            },
+            {
+              "key": "primaryColor",
+              "value": "#07255F",
+              "description": "Enter a color by name (e.g. red, blue, green) or a hex code (e.g. #007AA3)"
+            },
+            {
+              "key": "secondaryColor",
+              "value": "steelblue",
+              "description": "Enter a color by name (e.g. red, blue, green) or a hex code (e.g. #00BCEB)"
+            },
+            {
+              "key": "bookmarkURL_1",
+              "value": "default",
+              "description": "The page URL you want this card to link to. Use default to keep original"
+            },
+            {
+              "key": "bookmarkURL_2",
+              "value": "www.wikipedia.com",
+              "description": "The page URL you want this card to link to. Use default to keep original"
+            },
+            {
+              "key": "bookmarkURL_3",
+              "value": "www.bing.com",
+              "description": "The page URL you want this card to link to. Use default to keep original"
+            },
+            {
+              "key": "bookmarkURL_4",
+              "value": "default",
+              "description": "The page URL you want this card to link to. Use default to keep original"
+            },
+            {
+              "key": "bookmarkURL_5",
+              "value": "default",
+              "description": "The page URL you want this card to link to. Use default to keep original"
+            },
+            {
+              "key": "bookmarkURL_6",
+              "value": "default",
+              "description": "The page URL you want this card to link to. Use default to keep original"
+            },
+            {
+              "key": "bookmarkURL_7",
+              "value": "default",
+              "description": "The page URL you want this card to link to. Use default to keep original"
+            },
+            {
+              "key": "bookmarkURL_8",
+              "value": "default",
+              "description": "The page URL you want this card to link to. Use default to keep original"
+            }
+          ],
+          "name": "Simple Start Page Extension",
+          "version": "3.0",
+          "manifest_version": 3,
+          "chrome_url_overrides": {
+            "newtab": "newtab.html"
+          }
+        },
+        "ref": "main",
+        "repo_url": "https://github.com/JSPOON3R/WE-SIMPLE-START-PAGE"
+      }
+    ],
+    "landing_page": null
+  },
+  "overrides": {}
 }
