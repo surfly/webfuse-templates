@@ -1,6 +1,6 @@
 [
   {
-    "category": "Collaboration",
+    "category": ["Collaboration"],
     "plan": "Forge",
     "add-ons": [],
     "icon": "garden:home-fill-16",

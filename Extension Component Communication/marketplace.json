@@ -1,6 +1,6 @@
 [
   {
-    "category": "Augmentation",
+    "category": ["Augmentation"],
     "plan": "Forge",
     "add-ons": [],
     "icon": "garden:speech-bubble-conversation-stroke-16",
